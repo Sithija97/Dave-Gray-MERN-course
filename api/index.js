@@ -11,6 +11,7 @@ import { logger } from "./middleware/logger.js";
 import { errorHandler } from "./middleware/errorHandler.js";
 import { corsOptions } from "./config/corsOptions.js";
 import { conncetDB } from "./config/db.js";
+import { userRouter } from "./routes/userRoutes.js";
 
 dotenv.config();
 const app = express();
