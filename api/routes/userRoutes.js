@@ -1,11 +1,11 @@
 import express from "express";
-export const userRouter = express.Router();
 import {
-  getAllUsers,
   createNewUser,
-  updateUser,
   deleteUser,
-} from "../controllers/userController";
+  getAllUsers,
+  updateUser,
+} from "../controllers/userController.js";
+const userRouter = express.Router();
 
 userRouter
   .route("/")
@@ -13,3 +13,5 @@ userRouter
   .post(createNewUser)
   .patch(updateUser)
   .delete(deleteUser);
+
+export { userRouter };

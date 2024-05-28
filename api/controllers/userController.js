@@ -1,5 +1,5 @@
-import User from "../models/User";
-import Note from "../models/Note";
+import User from "../models/User.js";
+import Note from "../models/Note.js";
 import bcrypt from "bcrypt";
 import asyncHandler from "express-async-handler";
 
@@ -8,10 +8,10 @@ import asyncHandler from "express-async-handler";
 // @access Private
 export const getAllUsers = asyncHandler(async (req, res) => {
   // Get all users from MongoDB
-  const users = await User.find().select("-password").lean();
+  const users = await User.find().select("-password -__v").lean();
 
   // If no users
-  if (!users) {
+  if (!users?.length) {
     return res.status(400).json({ message: "No users found" });
   }
   res.json(users);
