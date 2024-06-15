@@ -23,8 +23,9 @@ export const getAllUsers = asyncHandler(async (req, res) => {
 export const createNewUser = asyncHandler(async (req, res) => {
   const { username, password, roles } = req.body;
 
-  // conform data
+  // Confirm data
   if (!username || !password || !Array.isArray(roles) || !roles.length) {
+    return res.status(400).json({ message: "All fields are required" });
   }
 
   // check for duplicates
@@ -122,9 +123,12 @@ export const deleteUser = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "User not found" });
   }
 
-  const result = await user.deleteOne();
+  const username = user.username;
+  const userId = user._id;
 
-  const reply = `Username ${result.username} with ID ${result._id} deleted`;
+  await user.deleteOne();
+
+  const reply = `Username ${username} with ID ${userId} deleted`;
 
   res.json(reply);
 });
