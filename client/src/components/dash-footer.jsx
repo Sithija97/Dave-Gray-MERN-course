@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { DASH } from "../router";
 
-export const DashFooter = () => {
+export const DashboardFooter = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 

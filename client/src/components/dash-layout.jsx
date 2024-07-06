@@ -1,16 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { DashHeader } from "./dash-header";
-import { DashFooter } from "./dash-footer";
+import { DashboardHeader } from "./dash-header";
+import { DashboardFooter } from "./dash-footer";
 
-export const DashLayout = () => {
+export const DashboardLayout = () => {
   return (
     <>
-      <DashHeader />
+      <DashboardHeader />
       <div>
         <Outlet />
       </div>
-      <DashFooter />
+      <DashboardFooter />
     </>
   );
 };
