@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { DashboardHeader } from "./dash-header";
-import { DashboardFooter } from "./dash-footer";
+import { DashboardHeader } from "./dashboard-header";
+import { DashboardFooter } from "./dashboard-footer";
 
 export const DashboardLayout = () => {
   return (

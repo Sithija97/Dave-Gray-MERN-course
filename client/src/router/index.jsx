@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "../components/layout";
 import { Public } from "../components/public";
 import { Login } from "../features/auth/login";
-import { DashboardLayout } from "../components/dash-layout";
+import { DashboardLayout } from "../components/dashboard-layout";
 import { Welcome } from "../features/auth/welcome";
 import { Notes } from "../features/notes";
 import { Users } from "../features/users";
